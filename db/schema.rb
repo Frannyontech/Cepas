@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2021_11_18_151003) do
 
   create_table "strains", force: :cascade do |t|
     t.string "name"
+    t.boolean "available", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

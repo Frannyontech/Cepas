@@ -60,3 +60,10 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Jquery 22/11/21
+gem 'jquery-rails'
+
+
+# nested forms and attributes 22/11/21
+gem 'cocoon'

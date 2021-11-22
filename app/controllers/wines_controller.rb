@@ -13,10 +13,13 @@ class WinesController < ApplicationController
   # GET /wines/new
   def new
     @wine = Wine.new
+    @strains = Strain.all
+    @wine.wine_strains.build
   end
 
   # GET /wines/1/edit
   def edit
+    @strains = Strain.all
   end
 
   # POST /wines or /wines.json
