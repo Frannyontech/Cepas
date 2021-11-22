@@ -6,12 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-100.times do |i|
+10.times do |i|
     Wine.create!(name: "vino #{i+1}")
     puts "Vino #{i+1}"
 end
 
-100.times do |i|
+10.times do |i|
     Strain.create!(name: "Cepa #{i+1}")
     puts "Cepa #{i+1}"
 end
