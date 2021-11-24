@@ -64,6 +64,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Jquery 22/11/21
 gem 'jquery-rails'
 
-
 # nested forms and attributes 22/11/21
 gem 'cocoon'
+
+#24/11/21
+gem 'bootstrap',  '~>4.6.0'
