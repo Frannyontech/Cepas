@@ -78,4 +78,5 @@ class WinesController < ApplicationController
     def only_strains_availables
       @strains_availables = Strain.where(available: true)
     end
+  end
 end
