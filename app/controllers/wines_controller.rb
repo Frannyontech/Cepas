@@ -1,6 +1,7 @@
 class WinesController < ApplicationController
   before_action :set_wine, only: %i[ show edit update destroy ]
   before_action :only_strains_availables, only: [:new, :edit]
+  before_action :check_role
 
   # GET /wines or /wines.json
   def index
@@ -60,6 +61,10 @@ class WinesController < ApplicationController
   end
 
   private
+    def check_role
+      if current_user.role != "admin"
+        redirect_to root_path, notice: "Access denied"
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_wine
       @wine = Wine.find(params[:id])
@@ -67,7 +72,7 @@ class WinesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def wine_params
-      params.require(:wine).permit(:name, wine_strains_attributes: [:id, :strain_id, :percentage])
+      params.require(:wine).permit(:name, wine_strains_attributes: [:id, :strain_id, :percentage, :destroy])
     end
 
     def only_strains_availables

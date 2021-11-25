@@ -69,3 +69,4 @@ gem 'cocoon'
 
 #24/11/21
 gem 'bootstrap',  '~>4.6.0'
+gem 'devise'

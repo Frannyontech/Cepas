@@ -2,21 +2,12 @@
     <%= link_to "Cepas", strains_path, class: "btn btn-success" %>
 </nav>
 
-<% @wines.each do |wine| %>
-    <p><%= wine.name %></p>
-    <p><% wine.wine_strains.each_with_index do |wine_strain, index| %>
-        <p>Cepa <%= "#{index + 1} : #{wine_strain.strain.name} | #{wine_strain.percentage.to_i}%" %></p>
-    </p>
-    <% end %>
-<% end %>
-
-<table class="table table-striped table-dark">
-  <thead>
+<table class="table table-striped table-dark table-bordered">
+  <thead class="thead-light">
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Wine</th>
+      <th scope="col">Wine-strain</th>
     </tr>
   </thead>
   <tbody>
@@ -24,10 +15,14 @@
         <tr>
             <th scope="row"><%= wine.id %></th>
             <td><%= wine.name %></td>
-            <td><% wine.wine_strains.each_with_index do |wine_strain, index| %>
-                <p>Cepa <%= "#{index + 1} : #{wine_strain.strain.name} | #{wine_strain.percentage.to_i}%" %></p>
-            <% end %></td>
-        <% end %>
+            <td>
+                <ul>
+                <% wine.wine_strains.each_with_index do |wine_strain, index| %>
+                    <li>Cepa <%= "#{index + 1} : #{wine_strain.strain.name} | #{wine_strain.percentage.to_i}%" %></li>
+                <% end %>
+                </ul>
+            </td>
         </tr>
+    <% end %>
     </tbody>
 </table>
