@@ -16,9 +16,15 @@
     <%= form.text_field :name %>
   </div>
 
-   <div id="wine_strains" class="form-group">
+  <div id="wine_strains" class="form-group">
     <div class="links form-inline">
       <%= link_to_add_association 'add strain', form, :wine_strains %>
+    </div>
+  </div>
+
+  <div id="wines_oenologists" class="form-group">
+    <div class="links form-inline">
+      <%= link_to_add_association 'add grade', form, :wines_oenologists %>
     </div>
   </div>
 

@@ -24,7 +24,7 @@ class WinesController < ApplicationController
 
   # POST /wines or /wines.json
   def create
-    
+   
     @wine = Wine.new(wine_params)
 
     respond_to do |format|
@@ -62,7 +62,7 @@ class WinesController < ApplicationController
 
   private
     def check_role
-      if current_user.role != "admin"
+      if current_user.role != "Admin"
         redirect_to root_path, notice: "Access denied"
     end
     # Use callbacks to share common setup or constraints between actions.
@@ -72,7 +72,7 @@ class WinesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def wine_params
-      params.require(:wine).permit(:name, wine_strains_attributes: [:id, :strain_id, :percentage, :destroy])
+      params.require(:wine).permit(:name, wine_strains_attributes: [:id, :strain_id, :percentage, :destroy], wines_oenologists_attributes: [:id, :oenologist_id, :grade, :destroy])
     end
 
     def only_strains_availables
