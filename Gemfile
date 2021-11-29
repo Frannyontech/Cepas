@@ -70,3 +70,9 @@ gem 'cocoon'
 #24/11/21
 gem 'bootstrap',  '~>4.6.0'
 gem 'devise'
+
+# 25/11/21
+gem 'rails-erd', group: :development
+
+# 29/11/21
+gem 'faker'
