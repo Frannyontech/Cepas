@@ -59,7 +59,7 @@ class StrainsController < ApplicationController
 
   private
     def check_role
-      if current_user.role != "admin"
+      if current_user.role != "Admin"
         redirect_to root_path, notice: "Access denied"
     end
     # Use callbacks to share common setup or constraints between actions.
